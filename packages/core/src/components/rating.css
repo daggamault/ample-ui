@@ -1,0 +1,70 @@
+.rating {
+  --_color: oklch(0.75 0.18 75);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-0\.5);
+}
+
+.rating-star {
+  display: inline-flex;
+  color: var(--color-border);
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.rating-star-filled {
+  color: var(--_color);
+}
+
+.rating-star-half {
+  position: relative;
+  color: var(--color-border);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.rating-star svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.rating-interactive .rating-star {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--_color);
+    transform: scale(1.1);
+  }
+}
+
+.rating-sm .rating-star svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.rating-lg .rating-star svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.rating-value {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-left: var(--spacing-1);
+}
+
+.rating-count {
+  font-size: var(--text-sm);
+  color: var(--color-text-subtle);
+  margin-left: var(--spacing-0\.5);
+}

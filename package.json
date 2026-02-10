@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "storybook build -o dist",
+    "build": "storybook build",
     "format": "biome format --write",
     "lint": "biome lint --fix"
   },
@@ -14,6 +14,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.3.14",
     "@storybook/html-vite": "^10.2.8",
+    "@tailwindcss/vite": "^4.1.18",
     "storybook": "^10.2.8"
   },
   "pnpm": {

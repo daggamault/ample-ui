@@ -1,0 +1,216 @@
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes loader-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loader-bars {
+  0%, 80%, 100% {
+    transform: scaleY(0.4);
+  }
+  40% {
+    transform: scaleY(1);
+  }
+}
+
+.loader {
+  --_color: var(--color-primary);
+
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: var(--border-width-thick) solid var(--color-border);
+  border-top-color: var(--_color);
+  border-radius: var(--radius-full);
+  animation: loader-spin 0.75s linear infinite;
+  vertical-align: middle;
+}
+
+.loader-secondary { --_color: var(--color-secondary); }
+.loader-warning { --_color: var(--color-warning); }
+.loader-error { --_color: var(--color-error); }
+.loader-success { --_color: var(--color-success); }
+.loader-info { --_color: var(--color-info); }
+
+.loader-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: var(--border-width);
+}
+
+.loader-lg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: var(--border-width-accent);
+}
+
+.loader-bounce {
+  --_color: var(--color-primary);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  animation: none;
+  vertical-align: middle;
+
+  &::before,
+  &::after,
+  & > span {
+    content: '';
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: var(--radius-full);
+    background-color: var(--_color);
+    animation: loader-bounce 1.4s var(--ease-default) infinite;
+  }
+
+  &::before {
+    animation-delay: 0s;
+  }
+
+  & > span {
+    animation-delay: 0.2s;
+  }
+
+  &::after {
+    animation-delay: 0.4s;
+  }
+}
+
+.loader-bounce.loader-sm {
+  gap: var(--spacing-0\.5);
+
+  &::before,
+  &::after,
+  & > span {
+    width: 0.375rem;
+    height: 0.375rem;
+  }
+}
+
+.loader-bounce.loader-lg {
+  gap: var(--spacing-1\.5);
+
+  &::before,
+  &::after,
+  & > span {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+
+.loader-pulse {
+  --_color: var(--color-primary);
+
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: var(--_color);
+  animation: loader-pulse 1.4s var(--ease-default) infinite;
+}
+
+.loader-pulse.loader-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.loader-pulse.loader-lg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.loader-bars {
+  --_color: var(--color-primary);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  width: auto;
+  height: 1.5rem;
+  border: none;
+  border-radius: 0;
+  animation: none;
+  vertical-align: middle;
+
+  &::before,
+  &::after,
+  & > span {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 100%;
+    border-radius: var(--radius-full);
+    background-color: var(--_color);
+    animation: loader-bars 1.2s var(--ease-default) infinite;
+  }
+
+  &::before {
+    animation-delay: 0s;
+  }
+
+  & > span {
+    animation-delay: 0.15s;
+  }
+
+  &::after {
+    animation-delay: 0.3s;
+  }
+}
+
+.loader-bars.loader-sm {
+  height: 1rem;
+  gap: 2px;
+
+  &::before,
+  &::after,
+  & > span {
+    width: 2px;
+  }
+}
+
+.loader-bars.loader-lg {
+  height: 2.5rem;
+  gap: 4px;
+
+  &::before,
+  &::after,
+  & > span {
+    width: 4px;
+  }
+}
+
+.loader-text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

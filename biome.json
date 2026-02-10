@@ -1,7 +1,13 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.3.14/schema.json",
   "files": {
-    "includes": ["**/*", "!node_modules", "!dist", "!**/*.css"]
+    "includes": [
+      "**/*",
+      "!node_modules",
+      "!dist",
+      "!**/*.css",
+      "!storybook-static"
+    ]
   },
   "css": {
     "parser": {
