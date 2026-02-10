@@ -1,5 +1,5 @@
 {
   "name": "@ample-ui/core",
-  "version": "0.0.1",
-  "main": "src/index.css"
+  "version": "0.0.0",
+  "private": true
 }
