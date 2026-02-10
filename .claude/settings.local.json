@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:www.radix-ui.com)",
-      "WebFetch(domain:ui.shadcn.com)"
-    ]
-  }
-}
