@@ -9,9 +9,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2rem;
-  height: 2rem;
-  padding: 0 var(--spacing-1\.5);
+  min-width: var(--size-tap-target);
+  height: var(--size-tap-target);
+  padding: 0 var(--spacing-2\.5);
   border-radius: var(--radius-btn);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
@@ -53,21 +53,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2rem;
-  height: 2rem;
+  min-width: var(--size-tap-target);
+  height: var(--size-tap-target);
   color: var(--color-text-subtle);
   user-select: none;
   letter-spacing: 0.1em;
 }
 
 .pagination-sm .pagination-item {
-  min-width: 1.75rem;
-  height: 1.75rem;
+  min-width: var(--size-tap-target-sm);
+  height: var(--size-tap-target-sm);
   font-size: var(--text-xs);
 }
 
 .pagination-lg .pagination-item {
-  min-width: 2.5rem;
-  height: 2.5rem;
+  min-width: var(--size-tap-target-lg);
+  height: var(--size-tap-target-lg);
   font-size: var(--text-base);
 }

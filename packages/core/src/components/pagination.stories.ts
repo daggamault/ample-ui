@@ -42,7 +42,9 @@ export const Pagination: Story = {
           <button class="pagination-item">20</button>
           <button class="pagination-item" aria-label="Next">&raquo;</button>
         </nav>`,
-        code('<nav class="pagination">\n  ...\n  <span class="pagination-ellipsis">...</span>\n  ...\n</nav>')
+        code(
+          '<nav class="pagination">\n  ...\n  <span class="pagination-ellipsis">...</span>\n  ...\n</nav>'
+        )
       )}
       ${section(
         'Disabled State',

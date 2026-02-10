@@ -22,7 +22,7 @@
   padding: var(--spacing-3) var(--spacing-4);
   min-height: 2.75rem;
   font-size: var(--text-sm);
-  font-weight: 550;
+  font-weight: var(--font-weight-heading);
   color: var(--color-text-muted);
   background: none;
   border: none;

@@ -73,7 +73,7 @@
 }
 
 .card-title {
-  font-size: 0.9375rem;
+  font-size: var(--text-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
 }

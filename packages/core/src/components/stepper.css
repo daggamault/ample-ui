@@ -17,8 +17,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: var(--radius-full);
   border: var(--border-width-thick) solid var(--color-border-strong);
   background-color: var(--color-surface);
@@ -52,9 +52,9 @@
 
 .step-connector {
   position: absolute;
-  top: 1rem;
-  left: calc(50% + 1.25rem);
-  right: calc(-50% + 1.25rem);
+  top: 1.125rem;
+  left: calc(50% + 1.375rem);
+  right: calc(-50% + 1.375rem);
   height: var(--border-width-thick);
   background-color: var(--color-border);
   transition: background-color var(--duration-normal) var(--ease-default);
@@ -107,11 +107,11 @@
 
   & > .step > .step-connector {
     position: absolute;
-    top: calc(2rem + var(--spacing-1));
-    left: calc(1rem - 0.75px);
+    top: calc(2.25rem + var(--spacing-1));
+    left: calc(1.125rem - 0.75px);
     right: auto;
     width: var(--border-width-thick);
-    height: calc(100% - 2rem - var(--spacing-1));
+    height: calc(100% - 2.25rem - var(--spacing-1));
   }
 
   & > .step:last-child > .step-content {
@@ -120,13 +120,13 @@
 }
 
 .stepper-sm .step-indicator {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--size-tap-target-sm);
+  height: var(--size-tap-target-sm);
   font-size: var(--text-xs);
 }
 
 .stepper-sm .step-connector {
-  top: 0.75rem;
-  left: calc(50% + 1rem);
-  right: calc(-50% + 1rem);
+  top: 1rem;
+  left: calc(50% + 1.25rem);
+  right: calc(-50% + 1.25rem);
 }

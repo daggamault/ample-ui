@@ -67,7 +67,9 @@ export const Stepper: Story = {
             <div class="step-content"><div class="step-title">Complete</div></div>
           </div>
         </div>`,
-        code('<div class="step step-completed">\n  <div class="step-indicator">&#10003;</div>\n  <span class="step-connector"></span>\n  <div class="step-content">...</div>\n</div>')
+        code(
+          '<div class="step step-completed">\n  <div class="step-indicator">&#10003;</div>\n  <span class="step-connector"></span>\n  <div class="step-content">...</div>\n</div>'
+        )
       )}
       ${section(
         'Vertical',

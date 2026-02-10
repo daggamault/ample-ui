@@ -67,7 +67,9 @@ export const Navbar: Story = {
             <div class="avatar avatar-sm avatar-initials avatar-secondary">AB</div>
           </div>
         </nav>`,
-        code('<nav class="navbar">\n  ...\n  <div class="navbar-actions">\n    <button class="btn btn-sm btn-ghost btn-icon">...</button>\n    <div class="navbar-divider"></div>\n    <div class="avatar avatar-sm avatar-initials">AB</div>\n  </div>\n</nav>')
+        code(
+          '<nav class="navbar">\n  ...\n  <div class="navbar-actions">\n    <button class="btn btn-sm btn-ghost btn-icon">...</button>\n    <div class="navbar-divider"></div>\n    <div class="avatar avatar-sm avatar-initials">AB</div>\n  </div>\n</nav>'
+        )
       )}
     </div>`
 };

@@ -1,5 +1,6 @@
 .rating {
-  --_color: oklch(0.75 0.18 75);
+  --_color: var(--color-rating);
+  --_size: var(--size-icon-md);
 
   display: inline-flex;
   align-items: center;
@@ -7,9 +8,16 @@
 }
 
 .rating-star {
+  position: relative;
   display: inline-flex;
   color: var(--color-border);
   transition: color var(--duration-fast) var(--ease-default);
+
+  & svg {
+    width: var(--_size);
+    height: var(--_size);
+    fill: currentColor;
+  }
 }
 
 .rating-star-filled {
@@ -17,28 +25,26 @@
 }
 
 .rating-star-half {
-  position: relative;
   color: var(--color-border);
 
-  &::before {
-    content: '';
+  & .rating-star-fill {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-  }
-}
+    inset: 0;
+    color: var(--_color);
+    clip-path: inset(0 50% 0 0);
 
-.rating-star svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: currentColor;
+    & svg {
+      width: var(--_size);
+      height: var(--_size);
+      fill: currentColor;
+    }
+  }
 }
 
 .rating-interactive .rating-star {
   cursor: pointer;
+  padding: var(--spacing-1);
+  margin: calc(-1 * var(--spacing-1));
 
   &:hover {
     color: var(--_color);
@@ -46,14 +52,12 @@
   }
 }
 
-.rating-sm .rating-star svg {
-  width: 1rem;
-  height: 1rem;
+.rating-sm {
+  --_size: var(--size-icon-sm);
 }
 
-.rating-lg .rating-star svg {
-  width: 1.75rem;
-  height: 1.75rem;
+.rating-lg {
+  --_size: var(--size-icon-lg);
 }
 
 .rating-value {

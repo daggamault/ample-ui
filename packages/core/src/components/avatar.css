@@ -23,9 +23,9 @@
 }
 
 .avatar-sm {
-  width: 1.5rem;
-  height: 1.5rem;
-  font-size: 0.5rem;
+  width: var(--size-tap-target-sm);
+  height: var(--size-tap-target-sm);
+  font-size: var(--text-xs);
 }
 
 .avatar-lg {

@@ -39,7 +39,9 @@ export const Loader: Story = {
           '<div class="loader" role="status" aria-label="Loading"></div>',
           '<div class="loader loader-lg" role="status" aria-label="Loading"></div>'
         ),
-        code('<div class="loader loader-sm"></div>\n<div class="loader"></div>\n<div class="loader loader-lg"></div>')
+        code(
+          '<div class="loader loader-sm"></div>\n<div class="loader"></div>\n<div class="loader loader-lg"></div>'
+        )
       )}
       ${section(
         'Bounce',
@@ -59,7 +61,9 @@ export const Loader: Story = {
             return `<div class="${cls.join(' ')}" role="status" aria-label="Loading"><span></span></div>`;
           })
         ),
-        code('<div class="loader loader-bounce loader-secondary"><span></span></div>')
+        code(
+          '<div class="loader loader-bounce loader-secondary"><span></span></div>'
+        )
       )}
       ${section(
         'Pulse',
@@ -108,7 +112,9 @@ export const Loader: Story = {
           '<div class="loader-text"><div class="loader loader-bounce loader-sm" role="status" aria-label="Loading"><span></span></div>Processing...</div>',
           '<div class="loader-text"><div class="loader loader-bars loader-sm" role="status" aria-label="Loading"><span></span></div>Saving...</div>'
         ),
-        code('<div class="loader-text">\\n  <div class="loader loader-sm"></div>\\n  Loading...\\n</div>')
+        code(
+          '<div class="loader-text">\\n  <div class="loader loader-sm"></div>\\n  Loading...\\n</div>'
+        )
       )}
       ${section(
         'In Button',

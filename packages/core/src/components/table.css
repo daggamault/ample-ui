@@ -65,6 +65,9 @@
 }
 
 .table-sortable th {
+  --_arrow-size: 3.5px;
+  --_arrow-height: 4px;
+
   cursor: pointer;
   user-select: none;
   transition: color var(--duration-fast) var(--ease-default);
@@ -80,21 +83,21 @@
     height: 0;
     margin-left: var(--spacing-1\.5);
     vertical-align: middle;
-    border-left: 3.5px solid transparent;
-    border-right: 3.5px solid transparent;
-    border-bottom: 4px solid currentColor;
+    border-left: var(--_arrow-size) solid transparent;
+    border-right: var(--_arrow-size) solid transparent;
+    border-bottom: var(--_arrow-height) solid currentColor;
     opacity: 0.3;
   }
 }
 
 .table-sort-asc::after {
   opacity: 1 !important;
-  border-bottom: 4px solid currentColor;
+  border-bottom: var(--_arrow-height) solid currentColor;
   border-top: none;
 }
 
 .table-sort-desc::after {
   opacity: 1 !important;
-  border-top: 4px solid currentColor;
+  border-top: var(--_arrow-height) solid currentColor;
   border-bottom: none !important;
 }

@@ -51,7 +51,9 @@ export const Select: Story = {
               <div data-value="go">Go</div>
             </div>
           </div>`,
-          code('<div data-select data-value="ts">\n  <div data-value="js">JavaScript</div>\n  <div data-value="ts">TypeScript</div>\n</div>')
+          code(
+            '<div data-select data-value="ts">\n  <div data-value="js">JavaScript</div>\n  <div data-value="ts">TypeScript</div>\n</div>'
+          )
         )}
         ${section(
           'Searchable',
@@ -135,7 +137,9 @@ export const Select: Story = {
               <div data-value="purple">Purple</div>
             </div>
           </div>`,
-          code('<div data-select data-multiple data-value="blue,green">\n  <div data-value="red">Red</div>\n  ...\n</div>')
+          code(
+            '<div data-select data-multiple data-value="blue,green">\n  <div data-value="red">Red</div>\n  ...\n</div>'
+          )
         )}
       </div>
     </div>`
