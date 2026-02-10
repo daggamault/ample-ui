@@ -18,6 +18,11 @@ const sampleRows = `
   <tr><td>Dave Brown</td><td>dave@example.com</td><td>Editor</td><td><span class="badge badge-error badge-soft badge-sm">Inactive</span></td></tr>
   <tr><td>Eve Davis</td><td>eve@example.com</td><td>Admin</td><td><span class="badge badge-success badge-soft badge-sm">Active</span></td></tr>`;
 
+const cardRows = `
+  <tr><td data-label="Name">Alice Johnson</td><td data-label="Email">alice@example.com</td><td data-label="Role">Admin</td><td data-label="Status"><span class="badge badge-success badge-soft badge-sm">Active</span></td></tr>
+  <tr><td data-label="Name">Bob Smith</td><td data-label="Email">bob@example.com</td><td data-label="Role">Editor</td><td data-label="Status"><span class="badge badge-success badge-soft badge-sm">Active</span></td></tr>
+  <tr><td data-label="Name">Carol White</td><td data-label="Email">carol@example.com</td><td data-label="Role">Viewer</td><td data-label="Status"><span class="badge badge-warning badge-soft badge-sm">Pending</span></td></tr>`;
+
 const thead = `<thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr></thead>`;
 
 export const Table: Story = {
@@ -80,6 +85,16 @@ export const Table: Story = {
         </div>`,
         code(
           '<div style="max-height: 12rem; overflow-y: auto;">\n  <table class="table table-sticky">...</table>\n</div>'
+        )
+      )}
+      ${section(
+        'Responsive Cards (resize to ≤640px)',
+        `<table class="table table-cards">
+          ${thead}
+          <tbody>${cardRows}</tbody>
+        </table>`,
+        code(
+          '<table class="table table-cards">\n  <thead>...</thead>\n  <tbody>\n    <tr>\n      <td data-label="Name">Alice</td>\n      <td data-label="Email">alice@example.com</td>\n    </tr>\n  </tbody>\n</table>'
         )
       )}
     </div>`

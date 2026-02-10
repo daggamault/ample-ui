@@ -20,7 +20,7 @@
     box-shadow: var(--shadow-1);
     cursor: pointer;
     transition:
-      transform var(--duration-fast) var(--ease-bounce),
+      transform var(--duration-fast) var(--ease-spring),
       box-shadow var(--duration-fast) var(--ease-default);
   }
 
@@ -33,7 +33,7 @@
     box-shadow: var(--shadow-1);
     cursor: pointer;
     transition:
-      transform var(--duration-fast) var(--ease-bounce),
+      transform var(--duration-fast) var(--ease-spring),
       box-shadow var(--duration-fast) var(--ease-default);
   }
 

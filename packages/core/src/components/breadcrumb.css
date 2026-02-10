@@ -25,8 +25,8 @@
   padding: var(--spacing-1) var(--spacing-1\.5);
   border-radius: var(--radius-btn);
   transition:
-    color var(--duration-fast) var(--ease-default),
-    background-color var(--duration-fast) var(--ease-default);
+    color var(--duration-normal) var(--ease-default),
+    background-color var(--duration-normal) var(--ease-default);
 
   &:hover {
     color: var(--color-primary);

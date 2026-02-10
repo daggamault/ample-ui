@@ -40,8 +40,8 @@
   text-decoration: none;
   white-space: nowrap;
   transition:
-    background-color var(--duration-fast) var(--ease-default),
-    color var(--duration-fast) var(--ease-default);
+    background-color var(--duration-normal) var(--ease-default),
+    color var(--duration-normal) var(--ease-default);
 
   &:hover {
     background-color: var(--color-base-muted);

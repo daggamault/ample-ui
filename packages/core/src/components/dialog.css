@@ -13,12 +13,12 @@
   box-shadow: var(--shadow-5);
   overflow: hidden;
   opacity: 0;
-  transform: scale(0.97) translateY(6px);
+  transform: scale(0.96) translateY(8px);
   transition:
-    opacity var(--duration-slow) var(--ease-out),
-    transform var(--duration-slow) var(--ease-out),
-    overlay var(--duration-slow) var(--ease-out) allow-discrete,
-    display var(--duration-slow) var(--ease-out) allow-discrete;
+    opacity var(--duration-slower) var(--ease-spring),
+    transform var(--duration-slower) var(--ease-spring),
+    overlay var(--duration-slower) var(--ease-spring) allow-discrete,
+    display var(--duration-slower) var(--ease-spring) allow-discrete;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -45,7 +45,7 @@
   @starting-style {
     &[open] {
       opacity: 0;
-      transform: scale(0.97) translateY(6px);
+      transform: scale(0.96) translateY(8px);
     }
 
     &[open]::backdrop {
@@ -137,8 +137,8 @@
   line-height: var(--leading-none);
   flex-shrink: 0;
   transition:
-    background-color var(--duration-fast) var(--ease-default),
-    color var(--duration-fast) var(--ease-default);
+    background-color var(--duration-normal) var(--ease-default),
+    color var(--duration-normal) var(--ease-default);
 
   &:hover {
     background-color: var(--color-base-muted);
@@ -165,5 +165,6 @@
   justify-content: flex-end;
   gap: var(--spacing-2);
   padding: var(--spacing-4) var(--spacing-6);
+  border-top: var(--border-width) solid var(--color-border);
   flex-shrink: 0;
 }

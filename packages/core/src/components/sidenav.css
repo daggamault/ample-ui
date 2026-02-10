@@ -68,7 +68,7 @@
     border-right: var(--border-width-thick) solid currentColor;
     border-bottom: var(--border-width-thick) solid currentColor;
     transform: rotate(-45deg);
-    transition: transform var(--duration-normal) var(--ease-default);
+    transition: transform var(--duration-normal) var(--ease-spring);
     flex-shrink: 0;
   }
 

@@ -21,8 +21,8 @@
   background: none;
   border: none;
   transition:
-    background-color var(--duration-fast) var(--ease-default),
-    color var(--duration-fast) var(--ease-default);
+    background-color var(--duration-normal) var(--ease-default),
+    color var(--duration-normal) var(--ease-default);
 
   &:hover:not(:disabled) {
     background-color: var(--color-base-muted);

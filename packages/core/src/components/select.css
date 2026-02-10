@@ -9,7 +9,7 @@
   align-items: center;
   gap: var(--spacing-2);
   width: 100%;
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3\.5);
   border: var(--border-width-thick) solid var(--color-border);
   border-radius: var(--radius-field);
   font-size: var(--text-base);
@@ -76,7 +76,7 @@
   width: var(--spacing-3);
   height: var(--spacing-3);
   margin-left: auto;
-  transition: transform var(--duration-normal) var(--ease-default);
+  transition: transform var(--duration-normal) var(--ease-spring);
 }
 
 .select-open > .select-trigger > .select-arrow {
@@ -94,12 +94,12 @@
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-3);
   opacity: 0;
-  transform: translateY(calc(-1 * var(--spacing-1))) scale(0.97);
+  transform: translateY(calc(-1 * var(--spacing-1))) scale(0.96);
   transform-origin: top left;
   pointer-events: none;
   transition:
-    opacity var(--duration-normal) var(--ease-out),
-    transform var(--duration-normal) var(--ease-out);
+    opacity var(--duration-normal) var(--ease-spring),
+    transform var(--duration-normal) var(--ease-spring);
 }
 
 .select-open > .select-dropdown {
@@ -111,7 +111,7 @@
 .select-open-up > .select-dropdown {
   top: auto;
   bottom: calc(100% + var(--spacing-1));
-  transform: translateY(var(--spacing-1)) scale(0.97);
+  transform: translateY(var(--spacing-1)) scale(0.96);
   transform-origin: bottom left;
 }
 

@@ -46,7 +46,7 @@
     transform: scale(0);
     transition:
       opacity var(--duration-fast) var(--ease-default),
-      transform var(--duration-fast) var(--ease-bounce);
+      transform var(--duration-fast) var(--ease-spring);
   }
 }
 

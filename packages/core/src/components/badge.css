@@ -36,7 +36,7 @@
 }
 
 .badge-sm {
-  padding: var(--spacing-0\.5) var(--spacing-2);
+  padding: var(--spacing-0\.5) var(--spacing-1\.5);
   font-size: var(--text-2xs);
 }
 

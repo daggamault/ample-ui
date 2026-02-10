@@ -22,7 +22,7 @@
     box-shadow var(--duration-normal) var(--ease-default),
     color var(--duration-normal) var(--ease-default),
     opacity var(--duration-normal) var(--ease-default),
-    transform var(--duration-fast) var(--ease-default);
+    transform var(--duration-fast) var(--ease-spring);
 
   &:hover:not(:disabled) {
     background-color: oklch(from var(--_color) calc(l - var(--l-hover)) c h);
@@ -30,7 +30,7 @@
 
   &:active:not(:disabled) {
     background-color: oklch(from var(--_color) calc(l - var(--l-active)) c h);
-    transform: scale(0.97);
+    transform: scale(0.95);
   }
 
   &:focus-visible {

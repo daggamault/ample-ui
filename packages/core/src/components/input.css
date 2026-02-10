@@ -14,7 +14,7 @@
 :where(.input, .textarea) {
   display: block;
   width: 100%;
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3\.5);
   border: var(--border-width-thick) solid var(--color-border);
   border-radius: var(--radius-field);
   font-size: var(--text-base);

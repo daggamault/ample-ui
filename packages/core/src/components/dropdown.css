@@ -17,14 +17,14 @@
   box-shadow: var(--shadow-3);
   padding: var(--spacing-1);
   opacity: 0;
-  transform: translateY(calc(-1 * var(--spacing-1))) scale(0.97);
+  transform: translateY(calc(-1 * var(--spacing-1))) scale(0.96);
   transform-origin: top left;
   pointer-events: none;
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) transparent;
   transition:
-    opacity var(--duration-normal) var(--ease-out),
-    transform var(--duration-normal) var(--ease-out);
+    opacity var(--duration-normal) var(--ease-spring),
+    transform var(--duration-normal) var(--ease-spring);
 }
 
 .dropdown-open > .dropdown-menu {
@@ -36,7 +36,7 @@
 .dropdown-open-up > .dropdown-menu {
   top: auto;
   bottom: calc(100% + var(--spacing-1));
-  transform: translateY(var(--spacing-1)) scale(0.97);
+  transform: translateY(var(--spacing-1)) scale(0.96);
   transform-origin: bottom left;
 }
 
@@ -70,7 +70,7 @@
   user-select: none;
   text-align: left;
   text-decoration: none;
-  transition: background-color var(--duration-fast) var(--ease-default);
+  transition: background-color var(--duration-normal) var(--ease-default);
 
   &:hover {
     background-color: var(--color-base-subtle);

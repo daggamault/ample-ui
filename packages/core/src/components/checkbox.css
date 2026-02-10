@@ -46,7 +46,7 @@
     transform: rotate(45deg) translateY(-1px) scale(0.5);
     transition:
       opacity var(--duration-fast) var(--ease-default),
-      transform var(--duration-fast) var(--ease-bounce);
+      transform var(--duration-fast) var(--ease-spring);
   }
 }
 
