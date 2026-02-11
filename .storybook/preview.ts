@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/html-vite';
-import '../packages/core/src/index.css';
+import '../src/index.css';
 
 const preview: Preview = {
   globalTypes: {
