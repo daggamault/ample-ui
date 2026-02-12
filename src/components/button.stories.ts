@@ -1,162 +1,103 @@
-import type { Meta, StoryObj } from '@storybook/html-vite';
-import { Button, type ButtonProps } from './button';
+import type { Meta, StoryObj } from '@storybook/html-vite'
+import type { Color } from '../lib/types'
+import { COLORS, SIZES } from '../lib/types'
+import {
+  BUTTON_VARIANTS,
+  Button,
+  type ButtonProps,
+  type ButtonVariant,
+} from './button'
 
 const meta = {
   title: 'Components/Button',
   tags: ['autodocs'],
-  render: (args) => {
-    // The Button returns a string, so we return it directly.
-    return Button(args);
-  },
+  render: (args) => Button(args),
   argTypes: {
     label: { control: 'text' },
     variant: {
       control: 'select',
-      options: [
-        'primary',
-        'secondary',
-        'success',
-        'danger',
-        'ghost',
-        'ghost-light'
-      ]
+      options: BUTTON_VARIANTS,
+    },
+    color: {
+      control: 'select',
+      options: COLORS,
     },
     size: {
       control: 'select',
-      options: ['sm', 'md', 'lg']
-    }
+      options: SIZES,
+    },
   },
   parameters: {
-    layout: 'centered'
-  }
-} satisfies Meta<ButtonProps>;
+    layout: 'centered',
+  },
+} satisfies Meta<ButtonProps>
 
-export default meta;
-type Story = StoryObj<ButtonProps>;
+export default meta
+type Story = StoryObj<ButtonProps>
 
-export const Primary: Story = {
+export const Interactive: Story = {
   args: {
-    label: 'Primary Action',
-    variant: 'primary',
-    size: 'md'
-  }
-};
+    label: 'Button',
+    variant: 'solid',
+    color: 'primary',
+    size: 'md',
+  },
+}
 
-export const Secondary: Story = {
-  args: {
-    label: 'Cancel',
-    variant: 'secondary',
-    size: 'md'
-  }
-};
-
-export const Success: Story = {
-  args: {
-    label: 'Success',
-    variant: 'success',
-    size: 'md'
-  }
-};
-
-export const Danger: Story = {
-  args: {
-    label: 'Destructive',
-    variant: 'danger',
-    size: 'md'
-  }
-};
-
-export const Ghost: Story = {
-  args: {
-    label: 'Ghost',
-    variant: 'ghost',
-    size: 'md'
-  }
-};
-
-export const GhostLight: Story = {
-  args: {
-    label: 'Ghost Light',
-    variant: 'ghost-light',
-    size: 'md'
-  }
-};
-
-/**
- * A "kitchen sink" story to see all variants and sizes.
- */
-export const AllVariants: Story = {
+const createVariantStory = (variant: ButtonVariant, title: string): Story => ({
+  name: title,
   render: () => `
-    <div style="display: flex; flex-direction: column; gap: 2rem; align-items: flex-start;">
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: center;">
+      ${COLORS.map(
+        (color) =>
+          Button({
+            label: color,
+            variant,
+            color: color as Color,
+            size: 'md',
+          }),
+      ).join('')}
+    </div>
+  `,
+})
+
+export const SolidButtons = createVariantStory('solid', 'Solid Buttons')
+export const OutlineButtons = createVariantStory('outline', 'Outline Buttons')
+export const GhostButtons = createVariantStory('ghost', 'Ghost Buttons')
+
+export const AllSizes: Story = {
+  name: 'Sizes',
+  render: () => `
+    <div style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
+      ${Button({ label: 'Small', variant: 'solid', color: 'primary', size: 'sm' })}
+      ${Button({ label: 'Medium', variant: 'solid', color: 'primary', size: 'md' })}
+      ${Button({ label: 'Large', variant: 'solid', color: 'primary', size: 'lg' })}
+    </div>
+  `,
+}
+
+export const AllVariants: Story = {
+  name: 'All Variants',
+  render: () => `
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
       <div>
-        <h3 style="margin-bottom: 1rem; font-weight: bold;">Small</h3>
-        <div style="display: flex; gap: 1rem; align-items: center;">
-          ${Button({ label: 'Primary', variant: 'primary', size: 'sm' })}
-          ${Button({
-            label: 'Secondary',
-            variant: 'secondary',
-            size: 'sm'
-          })}
-          ${Button({ label: 'Success', variant: 'success', size: 'sm' })}
-          ${Button({
-            label: 'Destructive',
-            variant: 'danger',
-            size: 'sm'
-          })}
-          ${Button({ label: 'Ghost', variant: 'ghost', size: 'sm' })}
-          ${Button({
-            label: 'Ghost Light',
-            variant: 'ghost-light',
-            size: 'sm'
-          })}
+        <h3 style="margin-bottom: 1rem; font-weight: 600; color: var(--color-text-muted);">Solid</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+          ${COLORS.map((color) => Button({ label: color, variant: 'solid', color: color as Color })).join('')}
         </div>
       </div>
       <div>
-        <h3 style="margin-bottom: 1rem; font-weight: bold;">Medium (Default)</h3>
-        <div style="display: flex; gap: 1rem; align-items: center;">
-          ${Button({ label: 'Primary', variant: 'primary', size: 'md' })}
-          ${Button({
-            label: 'Secondary',
-            variant: 'secondary',
-            size: 'md'
-          })}
-          ${Button({ label: 'Success', variant: 'success', size: 'md' })}
-          ${Button({
-            label: 'Destructive',
-            variant: 'danger',
-            size: 'md'
-          })}
-          ${Button({ label: 'Ghost', variant: 'ghost', size: 'md' })}
-          ${Button({
-            label: 'Ghost Light',
-            variant: 'ghost-light',
-            size: 'md'
-          })}
+        <h3 style="margin-bottom: 1rem; font-weight: 600; color: var(--color-text-muted);">Outline</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+          ${COLORS.map((color) => Button({ label: color, variant: 'outline', color: color as Color })).join('')}
         </div>
       </div>
       <div>
-        <h3 style="margin-bottom: 1rem; font-weight: bold;">Large</h3>
-        <div style="display: flex; gap: 1rem; align-items: center;">
-          ${Button({ label: 'Primary', variant: 'primary', size: 'lg' })}
-          ${Button({
-            label: 'Secondary',
-            variant: 'secondary',
-            size: 'lg'
-          })}
-          ${Button({ label: 'Success', variant: 'success', size: 'lg' })}
-          ${Button({
-            label: 'Destructive',
-            variant: 'danger',
-            size: 'lg'
-          })}
-          ${Button({ label: 'Ghost', variant: 'ghost', size: 'lg' })}
-          ${Button({
-            label: 'Ghost Light',
-            variant: 'ghost-light',
-            size: 'lg'
-          })}
+        <h3 style="margin-bottom: 1rem; font-weight: 600; color: var(--color-text-muted);">Ghost</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+          ${COLORS.map((color) => Button({ label: color, variant: 'ghost', color: color as Color })).join('')}
         </div>
       </div>
     </div>
-  `
-};
+  `,
+}

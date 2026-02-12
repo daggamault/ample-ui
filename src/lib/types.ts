@@ -1,17 +1,20 @@
-/**
- * Defines the standard color variants available for UI components.
- * These variants are typically tied to the semantic colors defined in the CSS.
- */
-export type Variant =
+export type Color =
   | 'primary'
   | 'secondary'
   | 'success'
   | 'warning'
   | 'error'
   | 'info'
-  | 'ghost';
 
-/**
- * Defines the standard sizes available for UI components.
- */
-export type Size = 'sm' | 'md' | 'lg';
+export const COLORS: readonly Color[] = [
+  'primary',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'info',
+] as const
+
+export type Size = (typeof SIZES)[number]
+
+export const SIZES = ['sm', 'md', 'lg'] as const
