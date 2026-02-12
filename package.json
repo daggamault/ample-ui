@@ -5,17 +5,17 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "format": "biome format --write",
-    "lint": "biome lint --fix"
-  },
-  "dependencies": {
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3"
+    "lint": "biome lint --fix",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.14",
+    "@biomejs/biome": "^2.3.15",
     "@storybook/html-vite": "^10.2.8",
     "@tailwindcss/vite": "^4.1.18",
-    "lucide-react": "^0.563.0",
-    "storybook": "^10.2.8"
+    "clsx": "^2.1.1",
+    "iconoir": "^7.11.0",
+    "storybook": "^10.2.8",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
   }
 }
