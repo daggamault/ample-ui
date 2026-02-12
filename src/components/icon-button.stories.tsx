@@ -35,7 +35,7 @@ export const Showcase: Story = {
 
         <div className="mb-6 rounded-lg bg-base-muted p-4">
           <pre className="text-sm text-text-muted">
-            <code>{`import { IconButton } from '@ample-ui/core'
+            <code>{`import { IconButton } from 'ample-ui'
 import { Heart } from 'lucide-react'
 
 <IconButton

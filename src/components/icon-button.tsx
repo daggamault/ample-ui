@@ -21,16 +21,16 @@ const sizeClasses: Record<Size, string> = {
 const variantClasses: Record<IconButtonVariant, Record<Color, string>> = {
   solid: {
     primary:
-      'bg-primary text-primary-content shadow-[0_0_0_0_oklch(from_var(--color-primary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)]',
+      'bg-primary text-primary-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-primary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)]',
     secondary:
-      'bg-secondary text-secondary-content shadow-[0_0_0_0_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)]',
+      'bg-secondary text-secondary-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)]',
     success:
-      'bg-success text-success-content shadow-[0_0_0_0_oklch(from_var(--color-success)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.25)]',
+      'bg-success text-success-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-success)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.25)]',
     warning:
-      'bg-warning text-warning-content shadow-[0_0_0_0_oklch(from_var(--color-warning)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.25)]',
+      'bg-warning text-warning-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-warning)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.25)]',
     error:
-      'bg-error text-error-content shadow-[0_0_0_0_oklch(from_var(--color-error)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)]',
-    info: 'bg-info text-info-content shadow-[0_0_0_0_oklch(from_var(--color-info)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.25)]'
+      'bg-error text-error-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-error)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)]',
+    info: 'bg-info text-info-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-info)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.25)]'
   },
   outline: {
     primary:
@@ -69,7 +69,7 @@ export const IconButton = ({
   ...props
 }: IconButtonProps) => {
   const baseClasses =
-    'relative inline-flex items-center justify-center font-semibold rounded select-none cursor-pointer transition-all duration-150 ease-out hover:scale-105 focus-visible:scale-105 active:scale-95 active:transition-none focus-visible:outline-none antialiased';
+    'relative inline-flex items-center justify-center font-medium rounded select-none cursor-pointer transition-[transform,box-shadow,background-color,border-color,color] duration-[280ms] [transition-timing-function:var(--ease-spring)] hover:scale-[1.07] focus-visible:scale-[1.07] active:scale-[0.985] active:duration-[100ms] active:[transition-timing-function:cubic-bezier(0.4,0,1,1)] focus-visible:outline-none will-change-transform antialiased';
 
   return (
     <button

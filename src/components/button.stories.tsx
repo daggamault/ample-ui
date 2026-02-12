@@ -25,7 +25,7 @@ export const Showcase: Story = {
 
         <div className="mb-6 rounded-lg bg-base-muted p-4">
           <pre className="text-sm text-text-muted">
-            <code>{`import { Button } from '@ample-ui/core'
+            <code>{`import { Button } from 'ample-ui'
 
 <Button variant="solid" color="primary">
   Click me
