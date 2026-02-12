@@ -4,7 +4,7 @@ export type Color =
   | 'success'
   | 'warning'
   | 'error'
-  | 'info'
+  | 'info';
 
 export const COLORS: readonly Color[] = [
   'primary',
@@ -12,9 +12,9 @@ export const COLORS: readonly Color[] = [
   'success',
   'warning',
   'error',
-  'info',
-] as const
+  'info'
+] as const;
 
-export type Size = (typeof SIZES)[number]
+export type Size = (typeof SIZES)[number];
 
-export const SIZES = ['sm', 'md', 'lg'] as const
+export const SIZES = ['sm', 'md', 'lg'] as const;

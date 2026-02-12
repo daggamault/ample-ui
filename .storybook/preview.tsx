@@ -1,5 +1,12 @@
-import type { Preview } from '@storybook/html-vite';
+import type { Decorator, Preview } from '@storybook/react';
 import '../src/index.css';
+
+const withTheme: Decorator = (Story, context) => {
+  const theme = context.globals.theme as string;
+  const root = document.documentElement;
+  root.setAttribute('data-theme', theme);
+  return <Story />;
+};
 
 const preview: Preview = {
   globalTypes: {
@@ -19,14 +26,7 @@ const preview: Preview = {
   initialGlobals: {
     theme: 'light'
   },
-  decorators: [
-    (storyFn, context) => {
-      const theme = context.globals.theme;
-      const root = document.documentElement;
-      root.setAttribute('data-theme', theme);
-      return storyFn();
-    }
-  ]
+  decorators: [withTheme]
 };
 
 export default preview;
