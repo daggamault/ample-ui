@@ -9,7 +9,7 @@ import {
   Trash2,
   X
 } from 'lucide-react';
-import { COLORS } from '../lib/types';
+import type { ButtonColor } from '../lib/types';
 import { IconButton } from './icon-button';
 
 const meta = {
@@ -20,6 +20,12 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof IconButton>;
+
+const BUTTON_COLORS: readonly ButtonColor[] = [
+  'primary',
+  'secondary',
+  'danger'
+] as const;
 
 export const Showcase: Story = {
   render: () => (
@@ -58,7 +64,7 @@ import { Heart } from 'lucide-react'
       <div>
         <h3 className="mb-4 text-lg font-semibold text-text">Solid</h3>
         <div className="flex flex-wrap gap-3">
-          {COLORS.map((color) => (
+          {BUTTON_COLORS.map((color) => (
             <IconButton
               key={color}
               variant="solid"
@@ -73,7 +79,7 @@ import { Heart } from 'lucide-react'
       <div>
         <h3 className="mb-4 text-lg font-semibold text-text">Outline</h3>
         <div className="flex flex-wrap gap-3">
-          {COLORS.map((color) => (
+          {BUTTON_COLORS.map((color) => (
             <IconButton
               key={color}
               variant="outline"
@@ -88,7 +94,7 @@ import { Heart } from 'lucide-react'
       <div>
         <h3 className="mb-4 text-lg font-semibold text-text">Ghost</h3>
         <div className="flex flex-wrap gap-3">
-          {COLORS.map((color) => (
+          {BUTTON_COLORS.map((color) => (
             <IconButton
               key={color}
               variant="ghost"
@@ -126,12 +132,16 @@ import { Heart } from 'lucide-react'
           Common Use Cases
         </h3>
         <div className="flex flex-wrap gap-4">
-          <IconButton icon={<X size={20} />} aria-label="Close" color="error" />
+          <IconButton
+            icon={<X size={20} />}
+            aria-label="Close"
+            color="danger"
+          />
           <IconButton
             icon={<Trash2 size={20} />}
             aria-label="Delete"
             variant="outline"
-            color="error"
+            color="danger"
           />
           <IconButton
             icon={<Download size={20} />}

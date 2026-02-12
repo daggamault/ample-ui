@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { COLORS } from '../lib/types';
-import { Button } from './button';
+import { Button, type ButtonColor } from './button';
 
 const meta = {
   title: 'Components/Button',
@@ -10,6 +9,12 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof Button>;
+
+const BUTTON_COLORS: readonly ButtonColor[] = [
+  'primary',
+  'secondary',
+  'danger'
+] as const;
 
 export const Showcase: Story = {
   render: () => (
@@ -35,7 +40,7 @@ export const Showcase: Story = {
   Outline
 </Button>
 
-<Button variant="ghost" color="success" size="sm">
+<Button variant="ghost" color="danger" size="sm">
   Ghost
 </Button>`}</code>
           </pre>
@@ -45,7 +50,7 @@ export const Showcase: Story = {
       <div>
         <h3 className="mb-4 text-lg font-semibold text-text">Solid</h3>
         <div className="flex flex-wrap gap-3">
-          {COLORS.map((color) => (
+          {BUTTON_COLORS.map((color) => (
             <Button key={color} variant="solid" color={color}>
               {color}
             </Button>
@@ -56,7 +61,7 @@ export const Showcase: Story = {
       <div>
         <h3 className="mb-4 text-lg font-semibold text-text">Outline</h3>
         <div className="flex flex-wrap gap-3">
-          {COLORS.map((color) => (
+          {BUTTON_COLORS.map((color) => (
             <Button key={color} variant="outline" color={color}>
               {color}
             </Button>
@@ -67,7 +72,7 @@ export const Showcase: Story = {
       <div>
         <h3 className="mb-4 text-lg font-semibold text-text">Ghost</h3>
         <div className="flex flex-wrap gap-3">
-          {COLORS.map((color) => (
+          {BUTTON_COLORS.map((color) => (
             <Button key={color} variant="ghost" color={color}>
               {color}
             </Button>

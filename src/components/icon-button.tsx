@@ -1,12 +1,15 @@
 import { clsx } from 'clsx';
 import type { ButtonHTMLAttributes } from 'react';
-import type { Color, Size } from '../lib/types';
-
-export type IconButtonVariant = 'solid' | 'outline' | 'ghost';
+import {
+  BUTTON_BASE_CLASSES,
+  type ButtonColor,
+  type ButtonVariant,
+  type Size
+} from '../lib/types';
 
 export type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: IconButtonVariant;
-  color?: Color;
+  variant?: ButtonVariant;
+  color?: ButtonColor;
   size?: Size;
   icon: React.ReactNode;
   'aria-label': string;
@@ -18,45 +21,30 @@ const sizeClasses: Record<Size, string> = {
   lg: 'h-14 w-14 text-lg'
 };
 
-const variantClasses: Record<IconButtonVariant, Record<Color, string>> = {
+const variantClasses: Record<ButtonVariant, Record<ButtonColor, string>> = {
   solid: {
     primary:
       'bg-primary text-primary-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-primary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)]',
     secondary:
       'bg-secondary text-secondary-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)]',
-    success:
-      'bg-success text-success-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-success)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.25)]',
-    warning:
-      'bg-warning text-warning-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-warning)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.25)]',
-    error:
-      'bg-error text-error-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-error)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)]',
-    info: 'bg-info text-info-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-info)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.25)]'
+    danger:
+      'bg-error text-error-content hover:brightness-110 shadow-[0_0_0_0_oklch(from_var(--color-error)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)]'
   },
   outline: {
     primary:
-      'border border-primary text-primary hover:bg-primary hover:text-primary-content shadow-[0_0_0_0_oklch(from_var(--color-primary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)]',
+      'border-2 border-primary text-primary hover:bg-primary hover:text-primary-content shadow-[0_0_0_0_oklch(from_var(--color-primary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.25)]',
     secondary:
-      'border border-secondary text-secondary hover:bg-secondary hover:text-secondary-content shadow-[0_0_0_0_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)]',
-    success:
-      'border border-success text-success hover:bg-success hover:text-success-content shadow-[0_0_0_0_oklch(from_var(--color-success)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.25)]',
-    warning:
-      'border border-warning text-warning hover:bg-warning hover:text-warning-content shadow-[0_0_0_0_oklch(from_var(--color-warning)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.25)]',
-    error:
-      'border border-error text-error hover:bg-error hover:text-error-content shadow-[0_0_0_0_oklch(from_var(--color-error)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)]',
-    info: 'border border-info text-info hover:bg-info hover:text-info-content shadow-[0_0_0_0_oklch(from_var(--color-info)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.25)]'
+      'border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-content shadow-[0_0_0_0_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.25)]',
+    danger:
+      'border-2 border-error text-error hover:bg-error hover:text-error-content shadow-[0_0_0_0_oklch(from_var(--color-error)_l_c_h_/_0.25)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.25)]'
   },
   ghost: {
     primary:
       'text-primary hover:bg-primary/10 shadow-[0_0_0_0_oklch(from_var(--color-primary)_l_c_h_/_0.15)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.15)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-primary)_l_c_h_/_0.15)]',
     secondary:
       'text-secondary hover:bg-secondary/10 shadow-[0_0_0_0_oklch(from_var(--color-secondary)_l_c_h_/_0.15)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.15)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-secondary)_l_c_h_/_0.15)]',
-    success:
-      'text-success hover:bg-success/10 shadow-[0_0_0_0_oklch(from_var(--color-success)_l_c_h_/_0.15)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.15)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-success)_l_c_h_/_0.15)]',
-    warning:
-      'text-warning hover:bg-warning/10 shadow-[0_0_0_0_oklch(from_var(--color-warning)_l_c_h_/_0.15)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.15)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-warning)_l_c_h_/_0.15)]',
-    error:
-      'text-error hover:bg-error/10 shadow-[0_0_0_0_oklch(from_var(--color-error)_l_c_h_/_0.15)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.15)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.15)]',
-    info: 'text-info hover:bg-info/10 shadow-[0_0_0_0_oklch(from_var(--color-info)_l_c_h_/_0.15)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.15)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-info)_l_c_h_/_0.15)]'
+    danger:
+      'text-error hover:bg-error/10 shadow-[0_0_0_0_oklch(from_var(--color-error)_l_c_h_/_0.15)] hover:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.15)] focus-visible:shadow-[0_0_0_4px_oklch(from_var(--color-error)_l_c_h_/_0.15)]'
   }
 };
 
@@ -67,21 +55,16 @@ export const IconButton = ({
   icon,
   className,
   ...props
-}: IconButtonProps) => {
-  const baseClasses =
-    'relative inline-flex items-center justify-center font-medium rounded select-none cursor-pointer transition-[transform,box-shadow,background-color,border-color,color] duration-[280ms] [transition-timing-function:var(--ease-spring)] hover:scale-[1.07] focus-visible:scale-[1.07] active:scale-[0.985] active:duration-[100ms] active:[transition-timing-function:cubic-bezier(0.4,0,1,1)] focus-visible:outline-none will-change-transform antialiased';
-
-  return (
-    <button
-      className={clsx(
-        baseClasses,
-        sizeClasses[size],
-        variantClasses[variant][color],
-        className
-      )}
-      {...props}
-    >
-      {icon}
-    </button>
-  );
-};
+}: IconButtonProps) => (
+  <button
+    className={clsx(
+      BUTTON_BASE_CLASSES,
+      sizeClasses[size],
+      variantClasses[variant][color],
+      className
+    )}
+    {...props}
+  >
+    {icon}
+  </button>
+);
